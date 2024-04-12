@@ -1,6 +1,8 @@
-export default function ButtonChoice() {
+import {ButtonProps} from "../interfaces/ButtonProps";
 
-    return <button className={"bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded"}>
+export default function ButtonChoice({onClick}: ButtonProps) {
+    
+    return <button onClick={onClick} className={"bg-lime-500 hover:bg-lime-700 text-white font-bold py-2 px-4 rounded"}>
         Выбрать
     </button>
     

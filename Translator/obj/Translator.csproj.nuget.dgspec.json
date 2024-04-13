@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Alex\\RiderProjects\\FullStack\\Translator\\Translator.csproj": {}
+    "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Alex\\RiderProjects\\FullStack\\Translator\\Translator.csproj": {
+    "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Alex\\RiderProjects\\FullStack\\Translator\\Translator.csproj",
+        "projectUniqueName": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj",
         "projectName": "Translator",
-        "projectPath": "C:\\Users\\Alex\\RiderProjects\\FullStack\\Translator\\Translator.csproj",
-        "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Alex\\RiderProjects\\FullStack\\Translator\\obj\\",
+        "projectPath": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj",
+        "packagesPath": "C:\\Users\\Coder\\.nuget\\packages\\",
+        "outputPath": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Coder\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

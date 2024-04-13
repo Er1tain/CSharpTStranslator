@@ -13,9 +13,13 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    private record class Program(string lang, string author);
+    
+    
     public IActionResult Index()
     {
-        return View();
+        Program p = new Program("C#", "ALexander Pridava");
+        return Json(p);
     }
 
     public IActionResult Privacy()

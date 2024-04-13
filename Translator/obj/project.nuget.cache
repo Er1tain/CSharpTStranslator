@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ECb6ojQ4pXNrnAmjkuYBo5bwnEP+hKJh/EVOI5B0s7WljxD0M2N4dRVo1KvaHsYfxwjjJYZEe5m2vZuE0QNAXg==",
+  "dgSpecHash": "hpbO9ZfwbCrLtPItgxmvvJTJB2z1LLjK1VtvgMf6C5bT2846BrN/ksoeUfqQvXkJIrAXj90FGrqONUPuaMnzWw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alex\\RiderProjects\\FullStack\\Translator\\Translator.csproj",
+  "projectFilePath": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -13,8 +13,8 @@ function App() {
     
     const [status_work, changeStatusWork] = useState(false);
     const window_files: any = useRef();
-    const setStateWork = (mode: boolean)=>changeStatusWork(mode);
-    const getListPrograms = ()=>API.getListPrograms();
+    const setStateWork = (mode: boolean)=>changeStatusWork(mode);       //visible or hidden window with codes C#
+    const getListPrograms = ()=>API.getListPrograms(); //Method what request list files program C#
     
     
     return (
@@ -23,8 +23,6 @@ function App() {
             {
                 status_work ? <WindowFiles ref={window_files}>
                     <ButtonClose onClick={() => setStateWork(false)}/>
-                    
-                    
                 </WindowFiles> : null
             }
             

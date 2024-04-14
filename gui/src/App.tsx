@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 import Window from "./components/Window";
 import TranslatorControl from "./components/TranslatorControl";
 import SpeedControl from "./components/TranslatorControl/SpeedControl";
@@ -12,7 +12,7 @@ import {API} from "./API/APImethod";
 function App() {
     
     const [status_work, changeStatusWork] = useState(false);
-    const window_files: any = useRef();
+    
     const setStateWork = (mode: boolean)=>changeStatusWork(mode);       //visible or hidden window with codes C#
     const getListPrograms = ()=>API.getListPrograms(); //Method what request list files program C#
     
@@ -21,7 +21,7 @@ function App() {
         <div>
 
             {
-                status_work ? <WindowFiles ref={window_files}>
+                status_work ? <WindowFiles>
                     <ButtonClose onClick={() => setStateWork(false)}/>
                 </WindowFiles> : null
             }

@@ -7,16 +7,15 @@ import ButtonChoice from "./components/TranslatorControl/ButtonChoice";
 import ButtonStop from "./components/TranslatorControl/ButtonStop";
 import WindowFiles from "./components/WindowFiles";
 import ButtonClose from "./components/WindowFiles/ButtonClose";
-import {API} from "./API/APImethod";
+
 
 function App() {
     
     const [status_work, changeStatusWork] = useState(false);
     
     const setStateWork = (mode: boolean)=>changeStatusWork(mode);       //visible or hidden window with codes C#
-    const getListPrograms = ()=>API.getListPrograms(); //Method what request list files program C#
     
-    
+ 
     return (
         <div>
 
@@ -30,10 +29,10 @@ function App() {
 
             <div className={'grid grid-cols-2 ml-20'}>
                 <Window label={"Исходный код"} className={'bg-blue-950 w-3/4 h-80 rounded'}>
-                    
+                    <></>
                 </Window>
                 <Window label={"Результат"} className={'bg-blue-950 w-3/4 h-80 rounded'}>
-                    
+                    <></>
                 </Window>
             </div>
             
@@ -43,7 +42,7 @@ function App() {
                 <SpeedControl/>
                 <ButtonChoice onClick={()=>{
                     setStateWork(true)
-                    getListPrograms();
+                   
                     }
                 }/>
             </TranslatorControl>

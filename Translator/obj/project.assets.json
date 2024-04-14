@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj",
+      "projectUniqueName": "C:\\translator\\CSharpTStranslator\\Translator\\Translator.csproj",
       "projectName": "Translator",
-      "projectPath": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\Translator.csproj",
+      "projectPath": "C:\\translator\\CSharpTStranslator\\Translator\\Translator.csproj",
       "packagesPath": "C:\\Users\\Coder\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\VishnyakovTranslator\\CSharpTStranslator\\Translator\\obj\\",
+      "outputPath": "C:\\translator\\CSharpTStranslator\\Translator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Coder\\AppData\\Roaming\\NuGet\\NuGet.Config",

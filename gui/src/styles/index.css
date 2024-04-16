@@ -17,4 +17,16 @@ html, body {
     align-self: center;
     width: 700px;
     height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+#close_button {
+    align-self: flex-end;
+    margin-top: 5px;
+    margin-right: 3px;
+}
+
+.filename {
+    font-size: 18px;
 }

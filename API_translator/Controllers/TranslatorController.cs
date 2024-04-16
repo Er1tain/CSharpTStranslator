@@ -12,4 +12,6 @@ public class TranslatorController: Controller {
         return Json(list_files);
     }
 
+    
+
 }

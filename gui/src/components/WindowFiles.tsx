@@ -9,7 +9,7 @@ export default function WindowFiles({children}: any) {
     const [list_program, setListProgram]:[string[], any] =  useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:5123/Translator/ListFiles")
+        axios.get("http://localhost:5153/Translator/ListFiles")
             .then(res=>setListProgram(res.data))
             .catch(err=>setListProgram(["Server not found"]))
 

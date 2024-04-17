@@ -252,7 +252,7 @@ public class LexAnalyzer {
         }
 
     }
-        return (text_program: program_tokens, code_leksems: result);
+        return (program_tokens,  result);
 
         }
 

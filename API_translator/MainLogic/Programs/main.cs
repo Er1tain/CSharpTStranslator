@@ -1,6 +1,6 @@
 namespace TranslatorPrograms;
 public class Program {
-    public static void Main() {
+    public static void Run() {
         int a, b;
         a = Convert.ToInt32(Console.ReadLine());
         b = Convert.ToInt32(Console.ReadLine());

@@ -82,9 +82,10 @@ public class LexAnalyzer {
 }
 
     //identificators
-    private static void Semantic_procedure_1(ref string buffer, ref List<string> identificators, ref string result) {
+    private static void Semantic_procedure_1(ref string buffer, ref List<string> identificators, ref string result, ref string code_leksem) {
             if (check_in_base(buffer, identificators) != -1) {
-                result += "I" + check_in_base(buffer, identificators).ToString() + ' ';
+                code_leksem = "I" + check_in_base(buffer, identificators).ToString();
+                result += code_leksem + ' ';
             }
             else {
                 identificators.Add(buffer);
@@ -96,21 +97,23 @@ public class LexAnalyzer {
             }
     
     //System Word
-    private static void Semantic_procedure_2(ref string buffer, List<string> SystemWordBase, ref List<string> identificators, ref string result)
+    private static void Semantic_procedure_2(ref string buffer, List<string> SystemWordBase, ref List<string> identificators, ref string result, ref string code_leksem)
         {
         if (check_in_base(buffer, SystemWordBase) != -1) {
-            result += "W" + check_in_base(buffer, SystemWordBase).ToString() + ' ';
+            code_leksem = "W" + check_in_base(buffer, SystemWordBase).ToString();
+            result += code_leksem.ToString() + ' ';
         }
         else {
-            Semantic_procedure_1(ref buffer, ref identificators, ref result);
+            Semantic_procedure_1(ref buffer, ref identificators, ref result, ref code_leksem);
         }
 
             buffer = "";
         }
 
-    private static void Semantic_procedure_3(ref string buffer, List<string> Operations, ref string result) {
+    private static void Semantic_procedure_3(ref string buffer, List<string> Operations, ref string result, ref string code_leksem) {
         if (check_in_base(buffer, Operations) != -1) {
-            result += "O" + check_in_base(buffer, Operations).ToString() + ' ';
+            code_leksem = "O" + check_in_base(buffer, Operations).ToString();
+            result += code_leksem + ' ';
         }
         else {
             Console.WriteLine("Not valiable operations!");
@@ -120,41 +123,46 @@ public class LexAnalyzer {
 
     }
 
-    private static void Semantic_procedure_4(ref string buffer, List<string> Separators, ref string result) {
+    private static void Semantic_procedure_4(ref string buffer, List<string> Separators, ref string result, ref string code_leksem) {
         if (check_in_base(buffer, Separators) != -1) {
-            result += "R" + check_in_base(buffer, Separators).ToString() + ' ';
+            code_leksem = "R" + check_in_base(buffer, Separators).ToString();
+            result += code_leksem + ' ';
         }
 
         
         buffer = "";
     }
 
-    private static void Semantic_procedure_5(ref string buffer, ref List<string> number_constants, ref string result) {
+    private static void Semantic_procedure_5(ref string buffer, ref List<string> number_constants, ref string result, ref string code_leksem) {
         if (check_in_base(buffer, number_constants) != -1){
-            result += "N" + check_in_base(buffer, number_constants).ToString() + ' ';
+            code_leksem = "N" + check_in_base(buffer, number_constants).ToString();
+            result += code_leksem + ' ';
         }
         else{
             number_constants.Add(buffer);
-            result += "N" + check_in_base(buffer, number_constants).ToString() + ' ';
+            code_leksem = "N" + check_in_base(buffer, number_constants).ToString();
+            result += code_leksem + ' ';
         }
 
         buffer = "";
     }
 
-    private static void Semantic_procedure_6(ref string buffer, ref List<string> str_constants, ref string result) {
+    private static void Semantic_procedure_6(ref string buffer, ref List<string> str_constants, ref string result, ref string code_leksem) {
         if (check_in_base(buffer, str_constants) != -1){
-            result += "C" + check_in_base(buffer, str_constants) + ' ';
+            code_leksem = "C" + check_in_base(buffer, str_constants).ToString();
+            result += code_leksem + ' ';
         }
         else{
             str_constants.Add(buffer);
-            result += "C" + check_in_base(buffer, str_constants) + ' ';
+            code_leksem = "C" + check_in_base(buffer, str_constants).ToString();
+            result += code_leksem + ' ';
         }
 
         
         buffer = "";
     }
 
-    public static (string, string) Start(string filename) {
+    public static List<List<string>> Start(string filename) {
         
         //Формируем базу служебных слов С#
         List<string> SystemWordBase = [
@@ -201,7 +209,9 @@ public class LexAnalyzer {
 
                 program_tokens += line;
             }
-        
+        //Save leksem and her code, example: ("a", "I0")
+        //List<(string, string)> list_leksem_and_code = [];
+        List<List<string>> list_leksem_and_code = [];
 
         //в program_tokens сохранен текст программы main.cs
         string buffer = ""; //сохраняется лексема для последующей обработки
@@ -213,52 +223,62 @@ public class LexAnalyzer {
             ChangeState(program_tokens[i], ref state, ref pred_state);
             buffer += program_tokens[i];
 
-            //cout << int(state) << ":" << int(pred_state) << ' ' << buffer << endl;
+    
             if (state == 'S') {
                 string sep = buffer.Substring(buffer.Length - 1);
                 buffer = buffer.Substring(0, buffer.Length-1);
 
+                //Save value of buffer
+                string key = buffer;
+
+                string code_leksem = "";
+
                 switch (pred_state) {
                     case '1':
-                        Semantic_procedure_2(ref buffer, SystemWordBase, ref identificators, ref result);
+                        Semantic_procedure_2(ref buffer, SystemWordBase, ref identificators, ref result, ref code_leksem);
                         break;
 
                     case '2':
-                        Semantic_procedure_1(ref buffer, ref identificators, ref result);
+                        Semantic_procedure_1(ref buffer, ref identificators, ref result, ref code_leksem);
                         break;
 
                     case '3':
-                        Semantic_procedure_3(ref buffer, Operations, ref result);
+                        Semantic_procedure_3(ref buffer, Operations, ref result, ref code_leksem);
                         break;
 
                     case '4':
-                        Semantic_procedure_5(ref buffer, ref number_constants, ref result);
+                        Semantic_procedure_5(ref buffer, ref number_constants, ref result, ref code_leksem);
                         break;
 
                     case '5':
-                        Semantic_procedure_5(ref buffer, ref number_constants, ref result);
+                        Semantic_procedure_5(ref buffer, ref number_constants, ref result, ref code_leksem);
                         break;
 
                     case '6':
-                        Semantic_procedure_6(ref buffer, ref str_constants, ref result);
+                        Semantic_procedure_6(ref buffer, ref str_constants, ref result, ref code_leksem);
                         break;
 
                     case 'S':
-                        Semantic_procedure_4(ref buffer, Separators, ref result);
+                        Semantic_procedure_4(ref buffer, Separators, ref result, ref code_leksem);
                         break;
                 }
-                Semantic_procedure_4(ref sep, Separators, ref result);
+                Semantic_procedure_4(ref sep, Separators, ref result, ref code_leksem);
+
+                // var pair = (buffer, code_leksem);
+                List<string> pair = [key, code_leksem];
+                list_leksem_and_code.Add(pair);
 
         }
 
     }
-        return (program_tokens,  result);
+        return list_leksem_and_code;
 
         }
 
 
         }
 
+    
 }
 
 

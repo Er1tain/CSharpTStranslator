@@ -13,22 +13,14 @@ public class TranslatorController: Controller {
         return Json(list_files);
     }
 
-     public record class DataSerialize(
-            string[] text_program,
-            string[] code_leksems
-        );
-
+    
     [HttpGet]
     public IActionResult LexAnalys(string filename) {
 
-        (string, string) data = LexAnalyzer.Start(filename);
-       
-        string[] text_program = data.Item1.Split(" ");
-        string[] code_leksems = data.Item2.Split(" ");
+        List<List<string>> data = LexAnalyzer.Start(filename);
+        
 
-        DataSerialize result = new DataSerialize(text_program, code_leksems);
-
-        return Json(result);
+        return Json(data);
 
     }
 

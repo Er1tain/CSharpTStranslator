@@ -15,6 +15,15 @@ export default function WindowFiles({children}: any) {
 
     },[])
 
+    const getTextProgram = (filename: string)=>
+        axios.get('http://localhost:5153/Translator/LexAnalys', {
+            params: {
+                filename: filename
+            }
+        })
+            .then(res=>console.log(res.data))
+            .catch(err=>console.log("File not found!"));
+
 
     return <div id={"background"} className={"bg-black flex w-full h-3"} style={{}}>
         <div id={"Choice"} className={"bg-white rounded"}>
@@ -27,7 +36,7 @@ export default function WindowFiles({children}: any) {
                 
                     )
                 
-                return <div className="flex gap-2 pl-3 hover:bg-gray-200">
+                return <div className="flex gap-2 pl-3 hover:bg-gray-200" onClick={()=>getTextProgram(filename)}>
                     <img src={iconfile} className={'w-5 h-5'}></img>
                     <p className={'h-10 filename'}>{filename}</p>
                 </div>})

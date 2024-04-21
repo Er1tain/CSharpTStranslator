@@ -252,6 +252,7 @@ public class LexAnalyzer {
         }
 
     }
+        program_tokens = string.Join(" ", program_tokens.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
         return (text_program: program_tokens, code_leksems: result);
 
         }

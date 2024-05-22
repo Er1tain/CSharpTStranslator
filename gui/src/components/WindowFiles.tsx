@@ -4,8 +4,6 @@ import iconfile from '../images/file.png';
 
 export default function WindowFiles({children}: any) {
     
-    
-
     const [list_program, setListProgram]:[string[], any] =  useState([]);
 
     useEffect(()=>{
@@ -24,6 +22,15 @@ export default function WindowFiles({children}: any) {
             .then(res=>console.log(res.data))
             .catch(err=>console.log("File not found!"));
 
+
+    const getTextProgram = (filename: string)=>
+        axios.get('http://localhost:5153/Translator/LexAnalys', {
+            params: {
+                filename: filename
+            }
+        })
+            .then(res=>console.log(res.data))
+            .catch(err=>console.log("File not found!"));
 
     return <div id={"background"} className={"bg-black flex w-full h-3"} style={{}}>
         <div id={"Choice"} className={"bg-white rounded"}>

@@ -23,6 +23,8 @@ public class TranslatorController: Controller {
 
         (string, string) data = LexAnalyzer.Start(filename);
         
+        
+
         data_serialize programText_and_codeLeksem = new data_serialize(data.Item1, data.Item2);
         
         return Json(programText_and_codeLeksem);

@@ -38,7 +38,7 @@ function App() {
             <TranslatorControl>
                 <ButtonRun/>
                 <ButtonStop/>
-                <SpeedControl/>
+                
                 <ButtonChoice onClick={()=>{
                     setStateWork(true)
                    

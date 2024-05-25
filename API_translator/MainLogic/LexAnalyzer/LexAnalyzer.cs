@@ -194,7 +194,7 @@ public class LexAnalyzer {
         //Внутренне представление лексем
         string result = "";
 
-        using (StreamReader program = new StreamReader($"C:\\translator\\CSharpTStranslator\\API_translator\\MainLogic\\TestProgram\\{filename}")) {
+        using (StreamReader program = new StreamReader($"C:\\Users\\Alex\\Desktop\\repo\\CSharpTStranslator\\API_translator\\MainLogic\\TestProgram\\{filename}")) {
             string program_tokens = "";
             string line = "";
             while ((line = program.ReadLine()) != null){

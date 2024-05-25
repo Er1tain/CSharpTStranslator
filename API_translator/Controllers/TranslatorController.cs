@@ -7,7 +7,7 @@ namespace API_translator.Controllers;
 public class TranslatorController: Controller {
 
     public IActionResult ListFiles() {
-        List<string> list_files = ["Program.cs", "Pridava.cs", "main.cs", "example.cs", "Test.cs", "index.cs", "project.cs"];
+        List<string> list_files = ["Program.txt", "Pridava.txt", "main.txt", "example.txt", "Test.txt", "index.txt", "project.txt"];
 
         return Json(list_files);
     }

@@ -12,7 +12,6 @@ import { Context, createContext } from 'vm';
 import ButtonClear from './components/TranslatorControl/ButtonClear';
 
 function App() {
-    
     const [status_work, changeStatusWork] = useState(false);
     
     const setStateWork = (mode: boolean)=>changeStatusWork(mode);       //visible or hidden window with codes C#
@@ -34,12 +33,20 @@ function App() {
 
         text_progam = text_progam.replaceAll(";", ";<br>");
         text_progam = text_progam.replaceAll("{", "{<br>");
-        text_progam = text_progam.replaceAll("}", "}<br>")
+        text_progam = text_progam.replaceAll("}", "}<br>");
 
         let list_words_text_progam: string[] = text_progam.split("<br>");
 
 
         return list_words_text_progam;
+    }
+
+    //Split string of leksems
+    const SplitCodeLeksems = (code_leksems: string)=> {
+
+        let result: string[] = code_leksems.split(" ");
+        console.log(result);
+        return result
     }
 
     //Vanishing text of leksems
@@ -57,13 +64,19 @@ function App() {
                 <h1 className={'text-center text-xl p-10'}>Translator C# code to TS</h1>
 
                 <div className={'grid grid-cols-2 ml-20'}>
-                    <Window label={"Исходный код"} className={`bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400`}>
+                    <Window label={"Исходный код"} className={`Window bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400`}>
                         {program_and_leksems["program_text"] != "" ? FormatTextProgram(program_and_leksems["program_text"]).map((leksem)=>{
                             return <span>{leksem}<br></br></span>
                         }) : <></>}
                     </Window>
-                    <Window label={"Лексический анализ"} className={'bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
-                        {program_and_leksems["code_leksems"] != "" && !vanish_leksems ? program_and_leksems["code_leksems"] : <></>}
+                    <Window label={"Лексический анализ"} className={'Window bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
+                        {program_and_leksems["code_leksems"] != "" && !vanish_leksems ? SplitCodeLeksems(program_and_leksems["code_leksems"]).map((leksem, i)=>{
+                            
+                               
+                                if (i % 20 == 0 && i > 0) return <span>{leksem} <br></br></span>
+                                return <span>{leksem} </span>
+                            
+                        }) : <></>}
                     </Window>
                 </div>
             
@@ -79,7 +92,7 @@ function App() {
                 <ButtonStop/>
                 <ButtonChoice onClick={()=>{
                     setStateWork(true)
-                   
+
                     }
                 }/>
             </TranslatorControl>

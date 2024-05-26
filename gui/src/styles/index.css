@@ -30,3 +30,7 @@ html, body {
 .filename {
     font-size: 18px;
 }
+
+.Window {
+    overflow-y:auto;
+}

@@ -27,7 +27,19 @@ function App() {
         setPaL(childData)
     }
 
-    //Render everytime after update program_amd_leksems
+    //Format text program
+    const FormatTextProgram = (program: string)=>{
+        let text_progam: string = program;
+
+        text_progam = text_progam.replaceAll(";", ";<br>");
+        text_progam = text_progam.replaceAll("{", "{<br>");
+        text_progam = text_progam.replaceAll("}", "}<br>")
+
+        let list_words_text_progam: string[] = text_progam.split("<br>");
+
+
+        return list_words_text_progam;
+    }
    
 
     return (
@@ -43,7 +55,9 @@ function App() {
 
                 <div className={'grid grid-cols-2 ml-20'}>
                     <Window label={"Исходный код"} className={`bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400`}>
-                        {program_and_leksems["program_text"] != "" ? program_and_leksems["program_text"] : <></>}
+                        {program_and_leksems["program_text"] != "" ? FormatTextProgram(program_and_leksems["program_text"]).map((leksem)=>{
+                            return <span>{leksem}<br></br></span>
+                        }) : <></>}
                     </Window>
                     <Window label={"Результат"} className={'bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
                         {program_and_leksems["code_leksems"] != "" ? program_and_leksems["code_leksems"] : <></>}

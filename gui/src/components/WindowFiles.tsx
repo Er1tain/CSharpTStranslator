@@ -2,9 +2,13 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import iconfile from '../images/file.png';
 
-export default function WindowFiles({children}: any) {
+export default function WindowFiles({parentGetData, children}: any) {
     
-    
+    //Send program text and code leksems to App
+    const sendProgra_leksems = (data: any)=>{
+        console.log(data)
+        parentGetData(data)
+    }
 
     const [list_program, setListProgram]:[string[], any] =  useState([]);
 
@@ -21,7 +25,7 @@ export default function WindowFiles({children}: any) {
                 filename: filename
             }
         })
-            .then(res=>console.log(res.data))
+            .then(res=>sendProgra_leksems(res.data))
             .catch(err=>console.log("File not found!"));
 
 

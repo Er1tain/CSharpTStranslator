@@ -1,10 +1,11 @@
 interface Props {
     label: string,
     className: string,
-    children: any
+    children: any,
+    
 }
 
-export default function Window({label, className,children}: Props) {
+export default function Window({label, className, children}: Props) {
     
     return <div className={'ml-10'}>
         <p>{label}</p>

@@ -2,7 +2,7 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import iconfile from '../images/file.png';
 
-export default function WindowFiles({parentGetData, children}: any) {
+export default function WindowFiles({parentGetData, setStateWork, children}: any) {
     
     //Send program text and code leksems to App
     const sendProgra_leksems = (data: any)=>{
@@ -40,7 +40,7 @@ export default function WindowFiles({parentGetData, children}: any) {
                 
                     )
                 
-                return <div className="flex gap-2 pl-3 hover:bg-gray-200" onClick={()=>getTextProgram(filename)}>
+                return <div className="flex gap-2 pl-3 hover:bg-gray-200" onClick={()=>{getTextProgram(filename); setStateWork(false)}}>
                     <img src={iconfile} className={'w-5 h-5'}></img>
                     <p className={'h-10 filename'}>{filename}</p>
                 </div>})

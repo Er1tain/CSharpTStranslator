@@ -34,7 +34,7 @@ function App() {
         <div>
             
                 {
-                    status_work ? <WindowFiles parentGetData={getDataFromWindowFiles}>
+                    status_work ? <WindowFiles parentGetData={getDataFromWindowFiles} setStateWork={setStateWork}>
                         <ButtonClose onClick={() => setStateWork(false)}/>
                     </WindowFiles> : null
                 }

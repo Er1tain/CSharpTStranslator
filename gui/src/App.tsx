@@ -9,6 +9,7 @@ import WindowFiles from "./components/WindowFiles";
 import ButtonClose from "./components/WindowFiles/ButtonClose";
 import arrow from './images/arrow.png';
 import { Context, createContext } from 'vm';
+import ButtonClear from './components/TranslatorControl/ButtonClear';
 
 function App() {
     
@@ -59,16 +60,16 @@ function App() {
                             return <span>{leksem}<br></br></span>
                         }) : <></>}
                     </Window>
-                    <Window label={"Результат"} className={'bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
+                    <Window label={"Лексический анализ"} className={'bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
                         {program_and_leksems["code_leksems"] != "" ? program_and_leksems["code_leksems"] : <></>}
                     </Window>
                 </div>
             
 
             <TranslatorControl>
+                <ButtonClear onClick={setPaL}/>
                 <ButtonRun/>
                 <ButtonStop/>
-                
                 <ButtonChoice onClick={()=>{
                     setStateWork(true)
                    

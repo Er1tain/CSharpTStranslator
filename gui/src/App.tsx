@@ -42,10 +42,10 @@ function App() {
                 <h1 className={'text-center text-xl p-10'}>Translator C# code to TS</h1>
 
                 <div className={'grid grid-cols-2 ml-20'}>
-                    <Window label={"Исходный код"} className={`bg-blue-950 w-3/4 h-80 rounded`}>
+                    <Window label={"Исходный код"} className={`bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400`}>
                         {program_and_leksems["program_text"] != "" ? program_and_leksems["program_text"] : <></>}
                     </Window>
-                    <Window label={"Результат"} className={'bg-blue-950 w-3/4 h-80 rounded'}>
+                    <Window label={"Результат"} className={'bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
                         {program_and_leksems["code_leksems"] != "" ? program_and_leksems["code_leksems"] : <></>}
                     </Window>
                 </div>

@@ -41,7 +41,9 @@ function App() {
 
         return list_words_text_progam;
     }
-   
+
+    //Vanishing text of leksems
+    const [vanish_leksems, setVanishLeksems] = useState(true);
 
     return (
         <div>
@@ -61,14 +63,19 @@ function App() {
                         }) : <></>}
                     </Window>
                     <Window label={"Лексический анализ"} className={'bg-blue-950 w-3/4 h-80 rounded font-bold text-yellow-400'}>
-                        {program_and_leksems["code_leksems"] != "" ? program_and_leksems["code_leksems"] : <></>}
+                        {program_and_leksems["code_leksems"] != "" && !vanish_leksems ? program_and_leksems["code_leksems"] : <></>}
                     </Window>
                 </div>
             
 
             <TranslatorControl>
-                <ButtonClear onClick={setPaL}/>
-                <ButtonRun/>
+                <ButtonClear onClick={()=>{setPaL({
+                        "program_text": "",
+                        "code_leksems": ""
+                        });
+                        setVanishLeksems(true);   
+                            }}/>
+                <ButtonRun onClick={setVanishLeksems}/>
                 <ButtonStop/>
                 <ButtonChoice onClick={()=>{
                     setStateWork(true)

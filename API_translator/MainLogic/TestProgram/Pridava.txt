@@ -1,15 +1,13 @@
 using System;
 
 public class Program {
+
     public static void Main() {
         string name, surname;
         name = Console.ReadLine();
         surname = Console.ReadLine();
-
         if (name=="Alex" && surname=="Pridava") {
             for (int i = 0; i < 10; i++) Console.WriteLine(i);
-        }   
-
-        
+        }     
     }
 }

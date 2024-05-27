@@ -34,3 +34,7 @@ html, body {
 .Window {
     overflow-y:auto;
 }
+
+.Leksems {
+    transition: 2s;
+}

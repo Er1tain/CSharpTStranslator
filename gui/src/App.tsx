@@ -73,8 +73,8 @@ function App() {
                         {program_and_leksems["code_leksems"] != "" && !vanish_leksems ? SplitCodeLeksems(program_and_leksems["code_leksems"]).map((leksem, i)=>{
                             
                                
-                                if (i % 20 == 0 && i > 0) return <span>{leksem} <br></br></span>
-                                return <span>{leksem} </span>
+                                if (i % 20 == 0 && i > 0) return <span  className='Leksems'>{leksem} <br></br></span>
+                                return <span  className='Leksems'>{leksem} </span> 
                             
                         }) : <></>}
                     </Window>

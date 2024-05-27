@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import App from "./App";
 import Window from "./components/Window";
 
@@ -14,6 +15,10 @@ export function PolishNotation() {
                 <></>
             </Window>
         </div>
-
+        <div className="text-center">
+            <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">
+                <Link to="/">Лексический анализ</Link>
+            </button>
+        </div>
     </div>
 }

@@ -90,7 +90,7 @@ function App() {
                         setVanishLeksems(true);   
                             }}/>
                 <ButtonRun onClick={setVanishLeksems}/>
-                <ButtonStop/>
+                
                 <ButtonChoice onClick={()=>{
                     setStateWork(true)
 

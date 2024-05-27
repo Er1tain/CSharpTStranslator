@@ -1,0 +1,25 @@
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+        int age, height, weight;
+        string name;
+        name = Console.ReadLine();
+        age = Convert.ToInt32(Console.ReadLine());
+        height = Convert.ToInt32(Console.ReadLine());
+        weight = Convert.ToInt32(Console.ReadLine());
+        
+        if (name == "Alex") {
+            for (int i = 0; i < 5; i++) {
+                Console.WriteLine("Happy)");
+            }
+            if (age == 20 && height == 190 && weight == 75) {
+                for (int i = 0; i < 5; i++) Console.WriteLine("Excelent!!!!");
+            }
+        }
+        else Console.WriteLine("((((");
+        
+    }
+}

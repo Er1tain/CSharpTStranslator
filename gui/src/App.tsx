@@ -10,6 +10,7 @@ import ButtonClose from "./components/WindowFiles/ButtonClose";
 import arrow from './images/arrow.png';
 import { Context, createContext } from 'vm';
 import ButtonClear from './components/TranslatorControl/ButtonClear';
+import { Link } from 'react-router-dom';
 
 function App() {
     const [status_work, changeStatusWork] = useState(false);
@@ -95,6 +96,9 @@ function App() {
 
                     }
                 }/>
+                <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <Link to="/PolishNotation">Обратная польская запись</Link>
+                </button>
             </TranslatorControl>
         </div>
 

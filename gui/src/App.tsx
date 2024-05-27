@@ -12,7 +12,13 @@ import { Context, createContext } from 'vm';
 import ButtonClear from './components/TranslatorControl/ButtonClear';
 import { Link } from 'react-router-dom';
 
-function App() {
+function App(props: any) {
+
+    //send data to Converter in Polish Notation
+    const sendData = ()=> {
+        props.sendData(FormatTextProgram(program_and_leksems["code_leksems"]))
+    }
+
     const [status_work, changeStatusWork] = useState(false);
     
     const setStateWork = (mode: boolean)=>changeStatusWork(mode);       //visible or hidden window with codes C#
@@ -97,7 +103,7 @@ function App() {
                     }
                 }/>
                 <Link to="/PolishNotation">
-                    <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                    <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={sendData}>
                         Обратная польская запись
                     </button>
                 </Link>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import './styles/index.css'
@@ -9,12 +9,18 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
+
 function Routing () {
+
+  const [data_for_PN_Converter, sendDataPNConverter] = useState([""]); 
+
+  
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<App/>}></Route>
-        <Route path="/PolishNotation" element={<PolishNotation/>}></Route>
+        <Route path="*" element={<App sendData={sendDataPNConverter}/>}></Route>
+        <Route path="/PolishNotation" element={<PolishNotation code_leksems={data_for_PN_Converter}/>}></Route>
       </Routes>
     </BrowserRouter>
   );

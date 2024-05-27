@@ -15,10 +15,20 @@ export function PolishNotation() {
                 <></>
             </Window>
         </div>
+
         <div className="text-center">
-            <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">
-                <Link to="/">Лексический анализ</Link>
+            <Link to="/">
+                <button className="bg-purple-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5">
+                    Лексический анализ
+                </button>
+            </Link>
+            <button className="bg-pink-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 ml-10">
+                Перевести
+            </button>
+            <button className="bg-lime-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-5 ml-10">
+                Синтаксический анализ
             </button>
         </div>
+
     </div>
 }

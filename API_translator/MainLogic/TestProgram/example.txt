@@ -2,6 +2,38 @@ using System;
 
 public class HelloWorld
 {
+    
+    public static bool simple(int x) {
+        for (int i=2; i < x / 2; i++) {
+            if (x % i == 0) return false;
+        }
+        return true;
+    }
+
+    public static int factorial(int x) {
+        if (x == 0) return 1;
+        return x * factorial(x-1);
+    }
+
+    public class Figure {
+        private int a;
+        private int b;
+        public Figure(int a, int b) {
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    public class Car {
+        private string mark;
+        public string GetMark() {
+            return mark;
+        }
+        public Car(string mark) {
+            this.mark = mark;
+        }
+    }
+
     public static void Main(string[] args)
     {
         int age, height, weight;

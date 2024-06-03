@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/CSharpTranslator/gui/static/css/main.fffa6327.css",
+    "main.js": "/CSharpTranslator/gui/static/js/main.094d95a3.js",
+    "index.html": "/CSharpTranslator/gui/index.html",
+    "main.fffa6327.css.map": "/CSharpTranslator/gui/static/css/main.fffa6327.css.map",
+    "main.094d95a3.js.map": "/CSharpTranslator/gui/static/js/main.094d95a3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fffa6327.css",
+    "static/js/main.094d95a3.js"
+  ]
+}
